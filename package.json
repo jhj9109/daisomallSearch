@@ -1,0 +1,17 @@
+{
+  "name": "daiso-search",
+  "version": "1.0.0",
+  "description": "다이소 매장 품번 검색",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "start": "concurrently \"lite-server --port=8080\" \"node proxy.js\""
+  }
+}

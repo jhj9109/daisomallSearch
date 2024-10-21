@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다이소 재고 검색</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        background-color: #0078d7;
+      }
+
+      .tab {
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background-color: #005a9e;
+        font-weight: bold;
+      }
+
+      .content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #keyword-input {
+        margin-top: 10px;
+        padding: 8px;
+        width: 80%;
+      }
+      
+      #item-input {
+        margin-top: 10px;
+        padding: 8px;
+        width: 80%;
+      }
+
+      .store-box {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .store-link {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #007bff;
+        margin-bottom: 8px;
+      }
+
+      .store-link:hover {
+        text-decoration: underline;
+      }
+
+      .store-box p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .input-container {
+        margin-bottom: 15px;
+      }
+
+      .input-label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>솔루엠 충전기 어댑터 25 W 화이트: 1055896</p>
+      <p>솔루엠 충전기 어댑터 25 W 블랙: 1055897</p>
+    </div>
+    
+    <div class="input-container">
+      <label for="item-input" class="input-label">품번 입력 후 엔터:</label>
+      <input
+        type="text"
+        id="item-input"
+        placeholder="검색할 아이템의 정확한 품번을 입력후 Enter를 누르세요"
+      />
+    </div>
+
+    <div id="search-item"></div>
+
+    <div class="tabs">
+      <div class="tab active" id="nearby-tab">내 주변 매장 검색</div>
+      <div class="tab" id="keyword-tab">매장 키워드 검색</div>
+    </div>
+
+    <div class="content">
+      <!-- 내 주변 찾기 모드 -->
+      <div id="nearby-content">
+        <p id="location-info"></p>
+      </div>
+
+      <!-- 키워드 검색 모드 -->
+      <div id="keyword-content" class="hidden">
+        <input
+          type="text"
+          id="keyword-input"
+          placeholder="지점검색 키워드를 입력후 Enter를 누르세요"
+        />
+      </div>
+
+      <!-- 검색 결과 리스트 -->
+      <div id="store-list">매장 목록을 불러오는 중...</div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
