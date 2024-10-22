@@ -193,17 +193,17 @@ async function handleUserDataUpdated(action) {
     case ACTION_STORES:
       displayStores(userData.stores);
       if (!userData.searchItem) break;
-    
+
     case ACTION_SEARCH_ITEM:
       displaySearchItem(userData.searchItem);
       if (!userData.stores) break;
-    
-  case ACTION_WILL_STOCKS_UPDATE:
+
+    case ACTION_WILL_STOCKS_UPDATE:
       result = await fetchStoreStocks(userData);
       if (!result.ok) break;
       console.log(`fetchStoreStocks success`);
       userData = result.userData;
-    
+
     case ACTION_STOCKS:
       displayStoreStocks(userData.searchItem, userData.stocks);
       break;
@@ -285,4 +285,6 @@ function displayStoreStocks(searchItemValue, stockData) {
 }
 
 // 초기화 함수 호출
-initialize();
+document.addEventListener("DOMContentLoaded", (event) => {
+  initialize();
+});
