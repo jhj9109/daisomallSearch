@@ -12,6 +12,6 @@
     "lite-server": "^2.6.1"
   },
   "scripts": {
-    "start": "concurrently \"lite-server --port=8080\" \"node proxy.js\""
+    "start": "concurrently \"lite-server\" \"node src/proxy.js\""
   }
 }

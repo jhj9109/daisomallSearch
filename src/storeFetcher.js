@@ -1,8 +1,7 @@
 // storeFetcher.js: 매장 정보 요청 및 DOM 처리 로직
 
-const 솔루엠_충전기_어댑터_25W_블랙_pdNo = 1055897;
-const 스톡_있는_가게_strCd = 10623;
-const baseUrl = "http://localhost:3000";
+const PORT = 3000;
+const baseUrl = `http://localhost:${PORT}`;
 
 // 매장 데이터 가져오는 함수
 async function fetchStoresByLocation(userData) {
